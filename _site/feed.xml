@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Your awesome title</title>
+    <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+</description>
+    <link>http://yourdomain.com/</link>
+    <atom:link href="http://yourdomain.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 02 Feb 2015 18:25:30 -0600</pubDate>
+    <lastBuildDate>Mon, 02 Feb 2015 18:25:30 -0600</lastBuildDate>
+    <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>OS X One Liners</title>
+        <description>&lt;p&gt;A quick OS X one liner to kill Microsoft Database Daemon&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;kill $(ps -ef | grep -i Microsoft | grep -v grep | awk &#39;{print $2} &#39;)&lt;/code&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 21 Mar 2014 00:00:00 -0500</pubDate>
+        <link>http://yourdomain.com/articles/2014/03/21/OS-X-One-liners.old.html</link>
+        <guid isPermaLink="true">http://yourdomain.com/articles/2014/03/21/OS-X-One-liners.old.html</guid>
+        
+        <category>OS X</category>
+        
+        <category>Bash</category>
+        
+        <category>One Liners</category>
+        
+        
+        <category>articles</category>
+        
+      </item>
+    
+      <item>
+        <title>OS X One Liners</title>
+        <description>&lt;p&gt;OS X one liners I have created or collected. All have been tested on Mavericks.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Kill Microsoft Database Daemon&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;kill $(ps -ef | grep -i Microsoft\ Database\ Daemon | grep -v grep | awk &#39;{print $2} &#39;)&lt;/code&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Kill SyncServices&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;kill $(ps -ef | grep -i SyncServices | grep -v grep | awk &#39;{print $2} &#39;)&lt;/code&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Kill all applications running from /Users folder&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;ps -ef | grep /Users | grep -v grep | awk &#39;{print $2}&#39; | xargs kill&lt;/code&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Reset Printing System&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;lpstat -p | cut -d&#39; &#39; -f2 | xargs -I{} lpadmin -x {}&lt;/code&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Curl outside network information. Thanks to ifconfig.me&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;curl ifconfig.me/all&lt;/code&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Outside IP address only&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;curl ifconfig.me&lt;/code&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Display MAC Address of default interface&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;netstat -rn | awk &#39;/default/ { print $NF }&#39; | head -1 | xargs -I {}  ifconfig {} | awk &#39;/ether/ {print $2}&#39;&lt;/code&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Serve current directory via Http on port 8000
+      &lt;code&gt;python -m SimpleHTTPServer&lt;/code&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 21 Mar 2014 00:00:00 -0500</pubDate>
+        <link>http://yourdomain.com/articles/2014/03/21/OS-X-One-liners.html</link>
+        <guid isPermaLink="true">http://yourdomain.com/articles/2014/03/21/OS-X-One-liners.html</guid>
+        
+        <category>OS X</category>
+        
+        <category>Bash</category>
+        
+        <category>Python</category>
+        
+        <category>One Liners</category>
+        
+        
+        <category>articles</category>
+        
+      </item>
+    
+      <item>
+        <title>Cowascript: AVRDUDE Hex uploader for OS X</title>
+        <description>&lt;p&gt;
+Last week, I found myself needing to flash [Grbl](http://bengler.no/grbl) to an Arduino. AVRDUDE is bundled with the Arduino IDE, but using it in Terminal yeilds some lenghtly commands. It would be easy to write a bash script to automate this process. As always, I search the Internet for a script that may meet my needs. Why reivent the wheel?
+&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;
+I stumbled accrossed this post on the &lt;a href=&quot;http://forum.arduino.cc/index.php/topic,100978.0.html&quot;&gt;Arduino fourms&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;running-cowascript&quot;&gt;Running Cowascript&lt;/h2&gt;
+
+&lt;p&gt;First thing, lets make it executable before we run. 
+&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;chmod +x Cowascript&lt;/code&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;./Cowascript&lt;/code&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.walenoh.com/images/Cowasaki-Run.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;From the Author 
+&lt;br /&gt;
+““The script starts by asking the user what they want to do: program/erase/read or verify a chip or multi-write a batch of chips.&lt;/p&gt;
+
+&lt;p&gt;The script then reads all the serial ports on the computer, it decides which of these are relevant and if there is just one it automatically selects it, if there are more than one it gives the user the ability to select the right one and if none it aborts.&lt;/p&gt;
+
+&lt;p&gt;The user can also select the chip type (but by setting a labeled variable in the script this question can be automated too).&lt;/p&gt;
+
+&lt;p&gt;The user will also be shown all the HEX files within the “hex” folder.”&lt;/p&gt;
+
+&lt;h4 id=&quot;arduino--os-x-109&quot;&gt;Arduino &amp;amp; OS X 10.9+&lt;/h4&gt;
+
+&lt;p&gt;Note that with Mac OSX 10.9 “Mavericks”, Apple provides their own driver for FTDI chipset. Many people have trouble with Apple’s driver. Steve B has a quick fix over on his &lt;a href=&quot;http://stevenbreuls.com/2014/03/fix-ftdi-dmx-interface-arduino-on-osx-10-9-mavericks/&quot;&gt;Blog&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 14 Mar 2014 00:00:00 -0500</pubDate>
+        <link>http://yourdomain.com/articles/2014/03/14/Cowascript-AVRDUDE-Hex-uploader-for-OS-X.html</link>
+        <guid isPermaLink="true">http://yourdomain.com/articles/2014/03/14/Cowascript-AVRDUDE-Hex-uploader-for-OS-X.html</guid>
+        
+        <category>OS X</category>
+        
+        <category>Arduino</category>
+        
+        <category>AVRdude</category>
+        
+        <category>bash</category>
+        
+        
+        <category>articles</category>
+        
+      </item>
+    
+      <item>
+        <title>Cloning a failing disk with ddrescue</title>
+        <description>&lt;p&gt;“The Raspberry Pi is a computer that you can use for all sort of brilliant and useful things, from learning to program, to making robots, to Tweeting when birds visit a nesting box, to taking pictures from the stratosphere.” &lt;a href=&quot;http://www.raspberrypi.org/&quot;&gt;RaspberryPi.org&lt;/a&gt;
+&lt;br /&gt;
+&lt;br /&gt;
+My Raspberry serves as a Home Theater PC (HTPC). I’ve tired Rasplex, Raspbmc, and Xbian. All have worked great, but I find them all lacking one way or another. Now its time to start testing OpenELEC.&lt;/p&gt;
+
+&lt;h2 id=&quot;installing-openelec-to-sd-on-os-x&quot;&gt;Installing OpenELEC to SD on OS X&lt;/h2&gt;
+
+&lt;h3 id=&quot;first-lets-find-our-sd-card&quot;&gt;First, lets find our SD card.&lt;/h3&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;code&gt;diskutil list&lt;/code&gt;
+&lt;br /&gt;&lt;br /&gt;
+&lt;img src=&quot;http://www.walenoh.com/images/20140314_1.png&quot; alt=&quot;image&quot; /&gt;
+&lt;img src=&quot;http://www.walenoh.com/images/20140314_2.png&quot; alt=&quot;image&quot; /&gt;
+&lt;img src=&quot;http://www.walenoh.com/images/20140314_3.png&quot; alt=&quot;image&quot; /&gt;
+&lt;img src=&quot;http://www.walenoh.com/images/20140314_4.png&quot; alt=&quot;image&quot; /&gt;
+&lt;img src=&quot;http://www.walenoh.com/images/20140314_5.png&quot; alt=&quot;image&quot; /&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;we-can-see-my-sd-card-is-devdisk1&quot;&gt;We can see my SD card is /dev/disk1&lt;/h3&gt;
+&lt;p&gt;&lt;br /&gt;
+Lets use dd to write openELEC to our SD card. I downloaded a pre-built unofficial image from &lt;a href=&quot;http://openelec.thestateofme.com&quot;&gt;http://openelec.thestateofme.com/&lt;/a&gt;. I put my download of OpenELEC in my Downloads folder.
+&lt;br /&gt;
+&lt;br /&gt;
+&lt;strong&gt;CAUTION:&lt;/strong&gt; dd is a powerful command. If you select the wrong disk you could destroy all the data on that disk.
+&lt;br /&gt;&lt;br /&gt;
+&lt;a href=&quot;https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/hdiutil.1.html&quot;&gt;From the hdutil man page&lt;/a&gt;
+&lt;br /&gt;&lt;br /&gt;
+Since any /dev entry can be treated as a raw disk image, it is worth noting which devices can be accessed when and how.  /dev/rdisk nodes are character-special devices, but are “raw” in the BSD sense and force block-aligned I/O.  They are closer to the physical disk than the buffer cache.  /dev/disk nodes, on the other hand, are buffered block-special devices and are used primarily by the kernel’s filesystem code.
+&lt;br /&gt;&lt;br /&gt;
+We will have dd write to the raw disk /dev/rdisk1, this will be much faster than writing to /dev/disk1.
+&lt;br /&gt;&lt;br /&gt;
+&lt;code&gt;sudo dd bs=1m if=~/Downloads/OpenELEC-RPi.arm-3.2.4.img of=/dev/rdisk1&lt;/code&gt;
+&lt;br /&gt;&lt;br /&gt;
+Control + T will show a status of process.
+&lt;br /&gt;
+&lt;br /&gt;
+&lt;img src=&quot;http://www.walenoh.com/images/20131216_2.png&quot; alt=&quot;image&quot; /&gt;
+&lt;br /&gt;
+&lt;br /&gt;
+dd may be unable to write to the disk if the resource is busy.
+&lt;br /&gt;&lt;br /&gt;
+&lt;img src=&quot;http://www.walenoh.com/images/20131216_3.png&quot; alt=&quot;image&quot; /&gt;
+&lt;br /&gt;&lt;br /&gt;
+To fix this, unmount the disk with diskutil.
+&lt;br /&gt;
+&lt;code&gt;diskutil unmountdisk /dev/disk1&lt;/code&gt;
+&lt;br /&gt;&lt;br /&gt;
+&lt;img src=&quot;http://www.walenoh.com/images/20131216_4.png&quot; alt=&quot;image&quot; /&gt;
+&lt;br /&gt;
+&lt;br /&gt;
+After the disk has been unmounted successfully. Run the dd command again.&lt;br /&gt;
+&lt;code&gt;sudo dd bs=1m if=~/Downloads/OpenELEC-RPi.arm-3.2.4.img of=/dev/rdisk1&lt;/code&gt;
+&lt;br /&gt;&lt;br /&gt;
+&lt;img src=&quot;http://www.walenoh.com/images/20131216_2.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;now-we-have-openelec-on-our-sd-card&quot;&gt;Now we have OpenELEC on our SD card.&lt;/h3&gt;
+
+</description>
+        <pubDate>Fri, 14 Mar 2014 00:00:00 -0500</pubDate>
+        <link>http://yourdomain.com/articles/2014/03/14/Cloning%20a%20failing%20disk%20with%20ddrescue%20copy.html</link>
+        <guid isPermaLink="true">http://yourdomain.com/articles/2014/03/14/Cloning%20a%20failing%20disk%20with%20ddrescue%20copy.html</guid>
+        
+        <category>OS X</category>
+        
+        <category>ddrescue</category>
+        
+        <category>dd</category>
+        
+        <category>homebrew</category>
+        
+        
+        <category>articles</category>
+        
+      </item>
+    
+      <item>
+        <title>Arduino Rover Rocket Launcher</title>
+        <description>&lt;p&gt;Found this awesome 6x6 Arduino Rover Rocket Launcher over at &lt;a href=&quot;http://www.mymindsi.com/&quot;&gt;MINDS-i&lt;/a&gt;
+&lt;br /&gt;
+&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;http://www.youtube.com/embed/tRBrVvrtkbU&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;figure&gt;
+	&lt;a href=&quot;http://farm8.staticflickr.com/7239/6987144574_1a4675db22_k.jpg&quot;&gt;&lt;img src=&quot;http://farm8.staticflickr.com/7239/6987144574_1a4675db22_k.jpg&quot; /&gt;&lt;/a&gt;&lt;br /&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+&lt;figure&gt;
+	&lt;a href=&quot;http://farm8.staticflickr.com/7070/7133229331_ee4782c7d6_k.jpg&quot;&gt;&lt;img src=&quot;http://farm8.staticflickr.com/7070/7133229331_ee4782c7d6_k.jpg&quot; /&gt;&lt;/a&gt;
+
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;figure&gt;
+    &lt;a href=&quot;http://farm8.staticflickr.com/7244/6987143914_4c3ae28507_k.jpg&quot;&gt;&lt;img src=&quot;http://farm8.staticflickr.com/7244/6987143914_4c3ae28507_k.jpg&quot; /&gt;&lt;/a&gt;
+&lt;/figure&gt;
+</description>
+        <pubDate>Mon, 21 Oct 2013 00:00:00 -0500</pubDate>
+        <link>http://yourdomain.com/articles/2013/10/21/Arduino-rocket-launcher.html</link>
+        <guid isPermaLink="true">http://yourdomain.com/articles/2013/10/21/Arduino-rocket-launcher.html</guid>
+        
+        <category>arduino</category>
+        
+        <category>rockets</category>
+        
+        <category>RC</category>
+        
+        
+        <category>articles</category>
+        
+      </item>
+    
+  </channel>
+</rss>
