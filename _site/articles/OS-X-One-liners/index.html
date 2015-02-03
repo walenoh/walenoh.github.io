@@ -5,15 +5,19 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>All Posts &#8211; Site Title</title>
-<meta name="description" content="A List of Posts">
-<meta name="keywords" content="">
+<title>OS X One Liners &#8211; Site Title</title>
+<meta name="description" content="OS X one liners I have created or collected. All have been tested on Mavericks.
+
+">
+<meta name="keywords" content="OS X, Bash, Python, One Liners">
 
 
 
 <!-- Twitter Cards -->
-<meta name="twitter:title" content="All Posts">
-<meta name="twitter:description" content="A List of Posts">
+<meta name="twitter:title" content="OS X One Liners">
+<meta name="twitter:description" content="OS X one liners I have created or collected. All have been tested on Mavericks.
+
+">
 
 
 
@@ -23,16 +27,18 @@
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="All Posts">
-<meta property="og:description" content="A List of Posts">
-<meta property="og:url" content="/posts/">
+<meta property="og:title" content="OS X One Liners">
+<meta property="og:description" content="OS X one liners I have created or collected. All have been tested on Mavericks.
+
+">
+<meta property="og:url" content="/articles/OS-X-One-liners/">
 <meta property="og:site_name" content="Site Title">
 
 
 
 
 
-<link rel="canonical" href="/posts/">
+<link rel="canonical" href="/articles/OS-X-One-liners/">
 <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Site Title Feed">
 
 <!-- http://t.co/dKP3o1e -->
@@ -72,7 +78,7 @@
 
 </head>
 
-<body class="post-index">
+<body class="post">
 
 <!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
 
@@ -144,157 +150,85 @@
   
 </div>
   </div>
-  <div id="index">
-    <h1>All Posts</h1>
+  <article class="post">
+    <div class="headline-wrap">
       
-    
-      <h3>2014</h3>
+        <h1><a href="/articles/OS-X-One-liners/" rel="bookmark" title="OS X One Liners">OS X One Liners</a></h1>
       
-      <article>
-        
-          <h2><a href="/author-override/" title="Author Override">Author Override</a></h2>
-          <p>A post to test author overrides using a data file.</p>
-        
-      </article>
-      
-    
-        
-        
-        
-      
-      <article>
-        
-          <h2><a href="/articles/OS-X-One-liners/" title="OS X One Liners">OS X One Liners</a></h2>
-          <p>OS X one liners I have created or collected. All have been tested on Mavericks.
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap">
+      <p>OS X one liners I have created or collected. All have been tested on Mavericks.</p>
 
-</p>
-        
-      </article>
-      
-    
-        
-        
-        
-          <h3>2013</h3>
-        
-      
-      <article>
-        
-          <h2><a href="/articles/Arduino-rocket-launcher/" title="Arduino Rover Rocket Launcher">Arduino Rover Rocket Launcher</a></h2>
-          <p>Found this awesome 6x6 Arduino Rover Rocket Launcher over at MINDS-i
+<p><br /></p>
 
+<p>Kill Microsoft Database Daemon</p>
 
+<p><code>kill $(ps -ef | grep -i Microsoft\ Database\ Daemon | grep -v grep | awk '{print $2} ')</code><br /><br /></p>
 
+<p>Kill SyncServices</p>
 
+<p><code>kill $(ps -ef | grep -i SyncServices | grep -v grep | awk '{print $2} ')</code><br /><br /></p>
 
+<p>Kill all applications running from /Users folder</p>
 
+<p><code>ps -ef | grep /Users | grep -v grep | awk '{print $2}' | xargs kill</code><br /><br /></p>
 
+<p>Reset Printing System</p>
 
+<p><code>lpstat -p | cut -d' ' -f2 | xargs -I{} lpadmin -x {}</code><br /><br /></p>
 
+<p>Curl outside network information. Thanks to ifconfig.me</p>
 
+<p><code>curl ifconfig.me/all</code><br /><br /></p>
 
-	
+<p>Outside IP address only</p>
 
+<p><code>curl ifconfig.me</code><br /><br /></p>
 
+<p>Display MAC Address of default interface</p>
 
+<p><code>netstat -rn | awk '/default/ { print $NF }' | head -1 | xargs -I {}  ifconfig {} | awk '/ether/ {print $2}'</code><br /><br /></p>
 
+<p>Serve current directory via Http on port 8000
+      <code>python -m SimpleHTTPServer</code></p>
 
-
-
-	
-
-
-
-
-
-
-
-    
-
-
-</p>
-        
-      </article>
-      
-    
-        
-        
-        
-      
-      <article>
-        
-          <h2><a href="/code-highlighting-post/" title="Syntax Highlighting Post">Syntax Highlighting Post</a></h2>
-          <p>Demo post displaying the various ways of highlighting code in Markdown.</p>
-        
-      </article>
-      
-    
-        
-        
-        
-      
-      <article>
-        
-          <h2 class="link-post"><a href="/sample-link-post/" title="Sample Link Post">Sample Link Post</a> <a href="http://mademistakes.com" target="_blank" title="Sample Link Post"><i class="fa fa-link"></i></a></h2>
-        
-      </article>
-      
-    
-        
-        
-        
-      
-      <article>
-        
-          <h2><a href="/readability-feature-post/" title="Post with Large Feature Image and Text">Post with Large Feature Image and Text</a></h2>
-          <p>Custom written post descriptions are the way to go... if you're not lazy.</p>
-        
-      </article>
-      
-    
-        
-        
-        
-      
-      <article>
-        
-          <h2><a href="/sample-post-images/" title="A Post with Images">A Post with Images</a></h2>
-          <p>Examples and code for displaying images in posts.</p>
-        
-      </article>
-      
-    
-        
-        
-        
-          <h3>2012</h3>
-        
-      
-      <article>
-        
-          <h2><a href="/readability-post/" title="Testing Readability with a Bunch of Text">Testing Readability with a Bunch of Text</a></h2>
-          <p>A ton of text to test readability.</p>
-        
-      </article>
-      
-    
-        
-        
-        
-          <h3>2011</h3>
-        
-      
-      <article>
-        
-          <h2><a href="/sample-post/" title="Sample Post">Sample Post</a></h2>
-          <p>Just about everything you'll need to style in the theme: headings, paragraphs, blockquotes, tables, code blocks, and more.</p>
-        
-      </article>
-    
-  </div><!-- /#index -->
+      <hr />
+      <footer role="contentinfo">
+        <div class="social-share">
+  <h4>Share on</h4>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=/articles/OS-X-One-liners/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=/articles/OS-X-One-liners/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=/articles/OS-X-One-liners/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+  </ul>
+</div><!-- /.social-share -->
+        <p class="byline"><strong>OS X One Liners</strong> was published on <time datetime="2014-03-21T00:00:00-05:00">March 21, 2014</time>.</p>
+      </footer>
+    </div><!-- /.article-wrap -->
+  
+  </article>
 </div><!-- /#main -->
 
 <div class="footer-wrap">
+  <div class="related-articles">
+  <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
+    <ul>
+    
+      <li><a href="/author-override/" title="Author Override">Author Override</a></li>
+    
+      <li><a href="/articles/Arduino-rocket-launcher/" title="Arduino Rover Rocket Launcher">Arduino Rover Rocket Launcher</a></li>
+    
+      <li><a href="/code-highlighting-post/" title="Syntax Highlighting Post">Syntax Highlighting Post</a></li>
+    
+    </ul>
+    <hr />
+  </div><!-- /.related-articles -->
   <footer>
     
 
@@ -307,7 +241,7 @@
 <script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
 <script src="/assets/js/scripts.min.js"></script>
 
+	        
 
-  
 </body>
 </html>
