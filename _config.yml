@@ -26,24 +26,24 @@ kramdown:
 
 # Site owner
 owner:
-  name: Your Name
+  name: Walenoh
   avatar: bio-photo.jpg
-  bio: "Describe your self."
+  bio: #"Describe your self."
   email: 
   disqus-shortname: 
-  twitter: #username
-  facebook: #username
+  twitter: walenoh
+  facebook:
   google:
-    plus: #username
+    plus: 
     analytics: 
     verify: 
     ad-client: 
     ad-slot: 
   bing-verify: 
-  github: #username
-  stackoverflow: #http://stackoverflow.com/users/123456/username
+  github: walenoh
+  stackoverflow: 
   linkedin: #username
-  instagram: #username
+  instagram: walenoh
   lastfm: #username
   tumblr: #username
   pinterest: #username
