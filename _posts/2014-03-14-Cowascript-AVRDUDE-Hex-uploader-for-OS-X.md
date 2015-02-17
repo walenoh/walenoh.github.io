@@ -27,7 +27,7 @@ First thing, lets make it executable before we run.
 ```./Cowascript```
 <br /><br>
 
-![image](http://walenoh.github.io/images/Cowasaki-Run.png)
+![image](http://www.walenoh.com/images/Cowasaki-Run.png)
 
 
 <br /><br>

@@ -1,6 +1,6 @@
 # Site wide configuration
 
-title:            Site Title
+title:            Walenoh
 locale:           en_US
 url:              
 
@@ -26,22 +26,22 @@ kramdown:
 
 # Site owner
 owner:
-  name: Walenoh
+  name: Wale Noh
   avatar: bio-photo.jpg
-  bio: #"Describe your self."
-  email: 
+  bio: "Describe your self."
+  email: walenoh@gmail.com
   disqus-shortname: 
   twitter: walenoh
-  facebook:
+  facebook: #username
   google:
-    plus: 
+    plus: #username
     analytics: 
     verify: 
     ad-client: 
     ad-slot: 
   bing-verify: 
   github: walenoh
-  stackoverflow: 
+  stackoverflow: #http://stackoverflow.com/users/123456/username
   linkedin: #username
   instagram: walenoh
   lastfm: #username

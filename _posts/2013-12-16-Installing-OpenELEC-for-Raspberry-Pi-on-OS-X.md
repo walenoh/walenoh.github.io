@@ -19,7 +19,7 @@ My Raspberry serves as a Home Theater PC (HTPC). I've tired Rasplex, Raspbmc, an
 <br>
 ```diskutil list```
 <br><br>
-![image](http://walenoh.github.io/images/20131216_1.png)
+![image](http://www.walenoh.com/images/20131216_1.png)
 <br><br>
 
 ###We can see my SD card is /dev/disk1
@@ -40,24 +40,24 @@ We will have dd write to the raw disk /dev/rdisk1, this will be much faster than
 Control + T will show a status of process.
 <br>
 <br>
-![image](http://walenoh.github.io/images/20131216_2.png)
+![image](http://www.walenoh.com/images/20131216_2.png)
 <br>
 <br>
 dd may be unable to write to the disk if the resource is busy.
 <br><br>
-![image](http://walenoh.github.io/images/20131216_3.png)
+![image](http://www.walenoh.com/images/20131216_3.png)
 <br><br>
 To fix this, unmount the disk with diskutil.
 <br>
 ```diskutil unmountdisk /dev/disk1```
 <br><br>
-![image](http://walenoh.github.io/images/20131216_4.png)
+![image](http://www.walenoh.com/images/20131216_4.png)
 <br>
 <br>
 After the disk has been unmounted successfully. Run the dd command again.<br>
 ```sudo dd bs=1m if=~/Downloads/OpenELEC-RPi.arm-3.2.4.img of=/dev/rdisk1```
 <br><br>
-![image](http://walenoh.github.io/images/20131216_2.png)
+![image](http://www.walenoh.com/images/20131216_2.png)
 
 ###Now we have OpenELEC on our SD card.
 

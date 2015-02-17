@@ -5,7 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>OS X One Liners &#8211; Site Title</title>
+<title>OS X One Liners &#8211; Walenoh</title>
 <meta name="description" content="OS X one liners I have created or collected. All have been tested on Mavericks.
 
 ">
@@ -32,14 +32,14 @@
 
 ">
 <meta property="og:url" content="/articles/OS-X-One-liners/">
-<meta property="og:site_name" content="Site Title">
+<meta property="og:site_name" content="Walenoh">
 
 
 
 
 
 <link rel="canonical" href="/articles/OS-X-One-liners/">
-<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Site Title Feed">
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Walenoh Feed">
 
 <!-- http://t.co/dKP3o1e -->
 <meta name="HandheldFriendly" content="True">
@@ -84,7 +84,7 @@
 
 <div class="navigation-wrapper">
 	<div class="site-name">
-		<a href="/">Site Title</a>
+		<a href="/">Walenoh</a>
 	</div><!-- /.site-name -->
 	<div class="top-navigation">
 		<nav role="navigation" id="site-nav" class="nav">
@@ -98,17 +98,12 @@
 				    
 				        
 				    
-				    <li><a href="/posts/" >Sample Posts</a></li>
+				    <li><a href="/posts/" >Articles</a></li>
 				
 				    
 				        
 				    
-				    <li><a href="/theme-setup/" >Theme Setup</a></li>
-				
-				    
-				        
-				        
-				    <li><a href="http://mademistakes.com" target="_blank">Made Mistakes</a></li>
+				    <li><a href="/iPhoneography/" >iPhoneography</a></li>
 				
 		    </ul>
 		</nav>
@@ -125,12 +120,12 @@
 <div itemscope itemtype="http://schema.org/Person">
 
 
-	<img src="/images/bio-photo.jpg" class="bio-photo" alt="Walenoh bio photo">
+	<img src="/images/bio-photo.jpg" class="bio-photo" alt="Wale Noh bio photo">
 
 
-  <h3 itemprop="name">Walenoh</h3>
-  <p></p>
-  
+  <h3 itemprop="name">Wale Noh</h3>
+  <p>Describe your self.</p>
+  <a href="mailto:walenoh@gmail.com" class="author-social" target="_blank"><i class="fa fa-fw fa-envelope-square"></i>Email</a>
   <a href="http://twitter.com/walenoh" class="author-social" target="_blank"><i class="fa fa-fw fa-twitter-square"></i> Twitter</a>
   
   
@@ -161,17 +156,15 @@
 
 <p><br /></p>
 
-<p>Kill Microsoft Database Daemon</p>
+<p><code>killall Microsoft\ Excel</code>  </p>
 
-<p><code>kill $(ps -ef | grep -i Microsoft\ Database\ Daemon | grep -v grep | awk '{print $2} ')</code><br /><br /></p>
+<p>This would kill the Microsoft Excel process, but what if we wanted to kill all Microsoft processes?</p>
 
-<p>Kill SyncServices</p>
+<p><code>kill $(ps axc | grep -i Microsoft | awk '{print $1} ')</code><br /><br /></p>
 
-<p><code>kill $(ps -ef | grep -i SyncServices | grep -v grep | awk '{print $2} ')</code><br /><br /></p>
+<p>Kill all applications running from /Users folder.</p>
 
-<p>Kill all applications running from /Users folder</p>
-
-<p><code>ps -ef | grep /Users | grep -v grep | awk '{print $2}' | xargs kill</code><br /><br /></p>
+<p><code>ps -ef | grep /Users | awk '{print $2}' | xargs kill</code><br /><br /></p>
 
 <p>Reset Printing System</p>
 
@@ -189,8 +182,23 @@
 
 <p><code>netstat -rn | awk '/default/ { print $NF }' | head -1 | xargs -I {}  ifconfig {} | awk '/ether/ {print $2}'</code><br /><br /></p>
 
+<p><code>lsof -i -n -P | grep -e "$(ps aux | grep node | grep -v grep | awk -F' ' '{print $2}' | xargs | awk -F' ' '{str = $1; for(i = 2; i &lt; NF; i++) {str = str "\\|" $i} print str}')"</code>
+<br /><br /></p>
+
+<p><a href="http://www.commandlinefu.com/commands/view/12410/force-delete-of-google-chrome-google-related-local-storage-make-gmail-offline-work-again">Force delete of Google Chrome Google-related local storage, make Gmail Offline work again</a> </p>
+
+<p><code>/bin/rm -f ~/Library/Application\ Support/Google/Chrome/Default/Local\ Storage/*google*</code></p>
+
+<p><a href="http://www.commandlinefu.com/commands/view/12107/list-osx-applications-and-versions.">List OSX applications and versions</a></p>
+
+<p><code>find /Applications -type d -maxdepth 1 -exec sh -c 'echo "{}"; (plutil -convert xml1 -o - "{}/Contents/Info.plist" | xpath /dev/stdin "concat(\"v\", /plist/dict/string[preceding-sibling::key[1]=\"CFBundleShortVersionString\"]/node())" 2&gt;/dev/null)' \;</code></p>
+
 <p>Serve current directory via Http on port 8000
-      <code>python -m SimpleHTTPServer</code></p>
+<code>python -m SimpleHTTPServer</code></p>
+
+<p>Sources</p>
+
+<p><a href="http://www.commandlinefu.com">commandlinefu.com</a></p>
 
       <hr />
       <footer role="contentinfo">
@@ -220,11 +228,11 @@
   <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
     <ul>
     
+      <li><a href="/articles/Say-No-to-grep-v-grep/" title="Say No to grep -v grep">Say No to grep -v grep</a></li>
+    
       <li><a href="/articles/Cowascript-AVRDUDE-Hex-uploader-for-OS-X/" title="Cowascript: AVRDUDE Hex uploader for OS X">Cowascript: AVRDUDE Hex uploader for OS X</a></li>
     
       <li><a href="/articles/Installing-OpenELEC-for-Raspberry-Pi-on-OS-X/" title="Installing OpenELEC for Raspberry on OS X">Installing OpenELEC for Raspberry on OS X</a></li>
-    
-      <li><a href="/articles/Arduino-rocket-launcher/" title="Arduino Rover Rocket Launcher">Arduino Rover Rocket Launcher</a></li>
     
     </ul>
     <hr />
@@ -232,7 +240,7 @@
   <footer>
     
 
-<span>&copy; 2015 Walenoh. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
+<span>&copy; 2015 Wale Noh. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
 
   </footer>
 </div><!-- /.footer-wrap -->
