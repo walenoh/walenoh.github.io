@@ -6,7 +6,7 @@
 <head>
 <meta charset="utf-8">
 <title>Say No to grep -v grep &#8211; Walenoh</title>
-<meta name="description" content="Sometimes, I need to search for process ids, so I pipe that search to grep and search the processes. Depending on how I run that search, ps may return the grep search too. One way to remove grep from the list would be to use grep -v grep. There has to be a better way right? Randal L. Schwartz explains a better way. Original Post  
+<meta name="description" content="Sometimes, I need to search for process ids, so I pipe that search to grep and search the processes. Depending on how I run that search, ps may return the grep search too. One way to remove grep from the list would be to use grep -v grep. There has to be a better way right? Randal L. Schwartz explains a better way. 
 
 ">
 <meta name="keywords" content="grep, OS X">
@@ -15,7 +15,7 @@
 
 <!-- Twitter Cards -->
 <meta name="twitter:title" content="Say No to grep -v grep">
-<meta name="twitter:description" content="Sometimes, I need to search for process ids, so I pipe that search to grep and search the processes. Depending on how I run that search, ps may return the grep search too. One way to remove grep from the list would be to use grep -v grep. There has to be a better way right? Randal L. Schwartz explains a better way. Original Post  
+<meta name="twitter:description" content="Sometimes, I need to search for process ids, so I pipe that search to grep and search the processes. Depending on how I run that search, ps may return the grep search too. One way to remove grep from the list would be to use grep -v grep. There has to be a better way right? Randal L. Schwartz explains a better way. 
 
 ">
 <meta name="twitter:site" content="@walenoh">
@@ -28,7 +28,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Say No to grep -v grep">
-<meta property="og:description" content="Sometimes, I need to search for process ids, so I pipe that search to grep and search the processes. Depending on how I run that search, ps may return the grep search too. One way to remove grep from the list would be to use grep -v grep. There has to be a better way right? Randal L. Schwartz explains a better way. Original Post  
+<meta property="og:description" content="Sometimes, I need to search for process ids, so I pipe that search to grep and search the processes. Depending on how I run that search, ps may return the grep search too. One way to remove grep from the list would be to use grep -v grep. There has to be a better way right? Randal L. Schwartz explains a better way. 
 
 ">
 <meta property="og:url" content="/articles/Say-No-to-grep-v-grep/">
@@ -152,9 +152,13 @@
       
     </div><!--/ .headline-wrap -->
     <div class="article-wrap">
-      <p>Sometimes, I need to search for process ids, so I pipe that search to grep and search the processes. Depending on how I run that search, ps may return the grep search too. One way to remove grep from the list would be to use grep -v grep. There has to be a better way right? Randal L. Schwartz explains a better way. <a href="http://www.perlmonks.org/bare/?node_id=203760">Original Post</a>  </p>
+      <p>Sometimes, I need to search for process ids, so I pipe that search to grep and search the processes. Depending on how I run that search, ps may return the grep search too. One way to remove grep from the list would be to use grep -v grep. There has to be a better way right? Randal L. Schwartz explains a better way. </p>
 
-<p>”<code>ps -ef | grep -v grep | grep inetd</code></p>
+<p><a href="http://www.perlmonks.org/bare/?node_id=203760">From Original Post</a>  </p>
+
+<p><br /><br /></p>
+
+<p><code>ps -ef | grep -v grep | grep inetd</code></p>
 
 <p>Please, let us not cargo-cult this crazy “grep -v grep” some more. I cringe each time I see that. It’s a poor solution to a common problem.
 The way to avoid picking out the grep process itself is to ask ps for the proper things:</p>

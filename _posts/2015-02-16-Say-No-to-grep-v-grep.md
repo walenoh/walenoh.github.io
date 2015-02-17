@@ -7,9 +7,13 @@ tags: [grep, OS X]
 
 
 
-Sometimes, I need to search for process ids, so I pipe that search to grep and search the processes. Depending on how I run that search, ps may return the grep search too. One way to remove grep from the list would be to use grep -v grep. There has to be a better way right? Randal L. Schwartz explains a better way. [Original Post](http://www.perlmonks.org/bare/?node_id=203760)  
+Sometimes, I need to search for process ids, so I pipe that search to grep and search the processes. Depending on how I run that search, ps may return the grep search too. One way to remove grep from the list would be to use grep -v grep. There has to be a better way right? Randal L. Schwartz explains a better way. 
 
-"```ps -ef | grep -v grep | grep inetd```
+[From Original Post](http://www.perlmonks.org/bare/?node_id=203760)  
+
+<br><br>
+
+```ps -ef | grep -v grep | grep inetd```
 
 
 Please, let us not cargo-cult this crazy "grep -v grep" some more. I cringe each time I see that. It's a poor solution to a common problem.
