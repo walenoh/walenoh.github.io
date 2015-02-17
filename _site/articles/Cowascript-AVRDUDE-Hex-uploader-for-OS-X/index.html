@@ -5,75 +5,25 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>Arduino Rover Rocket Launcher &#8211; Site Title</title>
-<meta name="description" content="Found this awesome 6x6 Arduino Rover Rocket Launcher over at MINDS-i
+<title>Cowascript: AVRDUDE Hex uploader for OS X &#8211; Site Title</title>
+<meta name="description" content="
+Last week, I found myself needing to flash [Grbl](http://bengler.no/grbl) to an Arduino. AVRDUDE is bundled with the Arduino IDE, but using it in Terminal yeilds some lenghtly commands. It would be easy to write a bash script to automate this process. As always, I search the Internet for a script that may meet my needs. Why reivent the wheel?
 
 
-
-
-
-
-
-
-
-
-
-	
-
-
-
-
-
-
-
-	
-
-
-
-
-
-
-
-    
-
+I stumbled accrossed this post on the Arduino fourms.
 
 ">
-<meta name="keywords" content="arduino, rockets, RC">
+<meta name="keywords" content="OS X, Arduino, AVRdude, bash">
 
 
 
 <!-- Twitter Cards -->
-<meta name="twitter:title" content="Arduino Rover Rocket Launcher">
-<meta name="twitter:description" content="Found this awesome 6x6 Arduino Rover Rocket Launcher over at MINDS-i
+<meta name="twitter:title" content="Cowascript: AVRDUDE Hex uploader for OS X">
+<meta name="twitter:description" content="
+Last week, I found myself needing to flash [Grbl](http://bengler.no/grbl) to an Arduino. AVRDUDE is bundled with the Arduino IDE, but using it in Terminal yeilds some lenghtly commands. It would be easy to write a bash script to automate this process. As always, I search the Internet for a script that may meet my needs. Why reivent the wheel?
 
 
-
-
-
-
-
-
-
-
-
-	
-
-
-
-
-
-
-
-	
-
-
-
-
-
-
-
-    
-
+I stumbled accrossed this post on the Arduino fourms.
 
 ">
 <meta name="twitter:site" content="@walenoh">
@@ -85,47 +35,22 @@
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Arduino Rover Rocket Launcher">
-<meta property="og:description" content="Found this awesome 6x6 Arduino Rover Rocket Launcher over at MINDS-i
+<meta property="og:title" content="Cowascript: AVRDUDE Hex uploader for OS X">
+<meta property="og:description" content="
+Last week, I found myself needing to flash [Grbl](http://bengler.no/grbl) to an Arduino. AVRDUDE is bundled with the Arduino IDE, but using it in Terminal yeilds some lenghtly commands. It would be easy to write a bash script to automate this process. As always, I search the Internet for a script that may meet my needs. Why reivent the wheel?
 
 
-
-
-
-
-
-
-
-
-
-	
-
-
-
-
-
-
-
-	
-
-
-
-
-
-
-
-    
-
+I stumbled accrossed this post on the Arduino fourms.
 
 ">
-<meta property="og:url" content="/articles/Arduino-rocket-launcher/">
+<meta property="og:url" content="/articles/Cowascript-AVRDUDE-Hex-uploader-for-OS-X/">
 <meta property="og:site_name" content="Site Title">
 
 
 
 
 
-<link rel="canonical" href="/articles/Arduino-rocket-launcher/">
+<link rel="canonical" href="/articles/Cowascript-AVRDUDE-Hex-uploader-for-OS-X/">
 <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Site Title Feed">
 
 <!-- http://t.co/dKP3o1e -->
@@ -240,40 +165,45 @@
   <article class="post">
     <div class="headline-wrap">
       
-        <h1><a href="/articles/Arduino-rocket-launcher/" rel="bookmark" title="Arduino Rover Rocket Launcher">Arduino Rover Rocket Launcher</a></h1>
+        <h1><a href="/articles/Cowascript-AVRDUDE-Hex-uploader-for-OS-X/" rel="bookmark" title="Cowascript: AVRDUDE Hex uploader for OS X">Cowascript: AVRDUDE Hex uploader for OS X</a></h1>
       
     </div><!--/ .headline-wrap -->
     <div class="article-wrap">
-      <p>Found this awesome 6x6 Arduino Rover Rocket Launcher over at <a href="http://www.mymindsi.com/">MINDS-i</a>
-<br />
-<br />
-<br /></p>
-
-<iframe width="560" height="315" src="http://www.youtube.com/embed/tRBrVvrtkbU" frameborder="0"></iframe>
-
+      <p>
+Last week, I found myself needing to flash [Grbl](http://bengler.no/grbl) to an Arduino. AVRDUDE is bundled with the Arduino IDE, but using it in Terminal yeilds some lenghtly commands. It would be easy to write a bash script to automate this process. As always, I search the Internet for a script that may meet my needs. Why reivent the wheel?
+</p>
 <p><br />
+I stumbled accrossed this post on the <a href="http://forum.arduino.cc/index.php/topic,100978.0.html">Arduino fourms</a>.</p>
+
+<h2 id="running-cowascript">Running Cowascript</h2>
+
+<p>First thing, lets make it executable before we run. 
+<br /><br /></p>
+
+<p><code>chmod +x Cowascript</code>
+<br /><br /></p>
+
+<p><code>./Cowascript</code>
+<br /><br /></p>
+
+<p><img src="http://walenoh.github.io/images/Cowasaki-Run.png" alt="image" /></p>
+
+<p><br /><br /></p>
+
+<p>From the Author 
 <br />
-<br /></p>
+““The script starts by asking the user what they want to do: program/erase/read or verify a chip or multi-write a batch of chips.</p>
 
-<figure>
-	<a href="http://farm8.staticflickr.com/7239/6987144574_1a4675db22_k.jpg"><img src="http://farm8.staticflickr.com/7239/6987144574_1a4675db22_k.jpg" /></a><br />
+<p>The script then reads all the serial ports on the computer, it decides which of these are relevant and if there is just one it automatically selects it, if there are more than one it gives the user the ability to select the right one and if none it aborts.</p>
 
+<p>The user can also select the chip type (but by setting a labeled variable in the script this question can be automated too).</p>
 
-</figure>
+<p>The user will also be shown all the HEX files within the “hex” folder.”</p>
 
-<p><br />
-<br /></p>
-<figure>
-	<a href="http://farm8.staticflickr.com/7070/7133229331_ee4782c7d6_k.jpg"><img src="http://farm8.staticflickr.com/7070/7133229331_ee4782c7d6_k.jpg" /></a>
+<h4 id="arduino--os-x-109">Arduino &amp; OS X 10.9+</h4>
 
-</figure>
+<p>Note that with Mac OSX 10.9 “Mavericks”, Apple provides their own driver for FTDI chipset. Many people have trouble with Apple’s driver. Steve B has a quick fix over on his <a href="http://stevenbreuls.com/2014/03/fix-ftdi-dmx-interface-arduino-on-osx-10-9-mavericks/">Blog</a>.</p>
 
-<p><br />
-<br /></p>
-
-<figure>
-    <a href="http://farm8.staticflickr.com/7244/6987143914_4c3ae28507_k.jpg"><img src="http://farm8.staticflickr.com/7244/6987143914_4c3ae28507_k.jpg" /></a>
-</figure>
 
       <hr />
       <footer role="contentinfo">
@@ -281,17 +211,17 @@
   <h4>Share on</h4>
   <ul>
     <li>
-      <a href="https://twitter.com/intent/tweet?text=/articles/Arduino-rocket-launcher/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+      <a href="https://twitter.com/intent/tweet?text=/articles/Cowascript-AVRDUDE-Hex-uploader-for-OS-X/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
     </li>
     <li>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=/articles/Arduino-rocket-launcher/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=/articles/Cowascript-AVRDUDE-Hex-uploader-for-OS-X/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
     </li>
     <li>
-      <a href="https://plus.google.com/share?url=/articles/Arduino-rocket-launcher/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+      <a href="https://plus.google.com/share?url=/articles/Cowascript-AVRDUDE-Hex-uploader-for-OS-X/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
     </li>
   </ul>
 </div><!-- /.social-share -->
-        <p class="byline"><strong>Arduino Rover Rocket Launcher</strong> was published on <time datetime="2013-10-21T00:00:00-05:00">October 21, 2013</time>.</p>
+        <p class="byline"><strong>Cowascript: AVRDUDE Hex uploader for OS X</strong> was published on <time datetime="2014-03-14T00:00:00-05:00">March 14, 2014</time>.</p>
       </footer>
     </div><!-- /.article-wrap -->
   
@@ -305,9 +235,9 @@
     
       <li><a href="/articles/OS-X-One-liners/" title="OS X One Liners">OS X One Liners</a></li>
     
-      <li><a href="/articles/Cowascript-AVRDUDE-Hex-uploader-for-OS-X/" title="Cowascript: AVRDUDE Hex uploader for OS X">Cowascript: AVRDUDE Hex uploader for OS X</a></li>
-    
       <li><a href="/articles/Installing-OpenELEC-for-Raspberry-Pi-on-OS-X/" title="Installing OpenELEC for Raspberry on OS X">Installing OpenELEC for Raspberry on OS X</a></li>
+    
+      <li><a href="/articles/Arduino-rocket-launcher/" title="Arduino Rover Rocket Launcher">Arduino Rover Rocket Launcher</a></li>
     
     </ul>
     <hr />

@@ -6,62 +6,36 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>/articles/Cowascript-AVRDUDE-Hex-uploader-for-OS-X/</loc>
+    <lastmod>2014-03-14T00:00:00-05:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>/articles/Installing-OpenELEC-for-Raspberry-Pi-on-OS-X/</loc>
+    <lastmod>2013-12-16T00:00:00-06:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>/articles/Arduino-rocket-launcher/</loc>
     <lastmod>2013-10-21T00:00:00-05:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>/code-highlighting-post/</loc>
-    <lastmod>2013-08-16T00:00:00-05:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>/sample-link-post/</loc>
-    <lastmod>2013-08-12T00:00:00-05:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>/readability-feature-post/</loc>
-    <lastmod>2013-05-23T00:00:00-05:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>/sample-post-images/</loc>
-    <lastmod>2013-05-22T00:00:00-05:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>/readability-post/</loc>
-    <lastmod>2012-05-22T00:00:00-05:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>/sample-post/</loc>
-    <lastmod>2011-03-10T00:00:00-06:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>/</loc>
-    <lastmod>2015-02-02T19:19:22-06:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>/theme-setup/</loc>
-    <lastmod>2015-02-02T19:19:22-06:00</lastmod>
+    <loc>/about/</loc>
+    <lastmod>2015-02-16T18:42:50-06:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>/posts/</loc>
-    <lastmod>2015-02-02T19:19:22-06:00</lastmod>
+    <lastmod>2015-02-16T18:42:50-06:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>/about/</loc>
-    <lastmod>2015-02-02T19:19:22-06:00</lastmod>
+    <loc>/</loc>
+    <lastmod>2015-02-16T18:42:50-06:00</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>1.0</priority>
   </url>
 </urlset>
