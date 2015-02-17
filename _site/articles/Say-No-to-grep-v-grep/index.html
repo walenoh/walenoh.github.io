@@ -154,30 +154,16 @@
     <div class="article-wrap">
       <p>Sometimes, I need to search for process ids, so I pipe that search to grep and search the processes. Depending on how I run that search, ps may return the grep search too. One way to remove grep from the list would be to use grep -v grep. There has to be a better way right? Randal L. Schwartz explains a better way. <a href="http://www.perlmonks.org/bare/?node_id=203760">Original Post</a>  </p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>“ps -ef</td>
-      <td>grep -v grep</td>
-      <td>grep inetd</td>
-    </tr>
-  </tbody>
-</table>
+<p>”<code>ps -ef | grep -v grep | grep inetd</code></p>
 
 <p>Please, let us not cargo-cult this crazy “grep -v grep” some more. I cringe each time I see that. It’s a poor solution to a common problem.
 The way to avoid picking out the grep process itself is to ask ps for the proper things:</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>ps axc</td>
-      <td>grep inetd</td>
-    </tr>
-  </tbody>
-</table>
+<p><code>ps axc | grep inetd</code></p>
 
-<p>If your ps doesn’t have a “command-name only” solution, then simply muddy the argument so that the grep cannot match it:
-ps ax | grep ‘[i]netd’</p>
+<p>If your ps doesn’t have a “command-name only” solution, then simply muddy the argument so that the grep cannot match it:</p>
+
+<p><code>ps ax | grep '[i]netd'</code></p>
 
 <p>Let’s not be wasting processes needlessly. Think before you type, people.
 – Randal L. Schwartz, Perl hacker”</p>

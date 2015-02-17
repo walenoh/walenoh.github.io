@@ -4,7 +4,7 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="/feed.xml" />
 <link rel="alternate" type="text/html" href="" />
-<updated>2015-02-16T23:13:07-06:00</updated>
+<updated>2015-02-16T23:15:50-06:00</updated>
 <id>/</id>
 <author>
   <name>Wale Noh</name>
@@ -29,30 +29,16 @@
   <content type="html">
     &lt;p&gt;Sometimes, I need to search for process ids, so I pipe that search to grep and search the processes. Depending on how I run that search, ps may return the grep search too. One way to remove grep from the list would be to use grep -v grep. There has to be a better way right? Randal L. Schwartz explains a better way. &lt;a href=&quot;http://www.perlmonks.org/bare/?node_id=203760&quot;&gt;Original Post&lt;/a&gt;  &lt;/p&gt;
 
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;“ps -ef&lt;/td&gt;
-      &lt;td&gt;grep -v grep&lt;/td&gt;
-      &lt;td&gt;grep inetd&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
+&lt;p&gt;”&lt;code&gt;ps -ef | grep -v grep | grep inetd&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;Please, let us not cargo-cult this crazy “grep -v grep” some more. I cringe each time I see that. It’s a poor solution to a common problem.
 The way to avoid picking out the grep process itself is to ask ps for the proper things:&lt;/p&gt;
 
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;ps axc&lt;/td&gt;
-      &lt;td&gt;grep inetd&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
+&lt;p&gt;&lt;code&gt;ps axc | grep inetd&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;If your ps doesn’t have a “command-name only” solution, then simply muddy the argument so that the grep cannot match it:
-ps ax | grep ‘[i]netd’&lt;/p&gt;
+&lt;p&gt;If your ps doesn’t have a “command-name only” solution, then simply muddy the argument so that the grep cannot match it:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;ps ax | grep &#39;[i]netd&#39;&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;Let’s not be wasting processes needlessly. Think before you type, people.
 – Randal L. Schwartz, Perl hacker”&lt;/p&gt;
