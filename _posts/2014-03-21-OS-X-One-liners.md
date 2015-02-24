@@ -49,7 +49,6 @@ List open files for a given process name
 
 
 [List OSX applications and versions](http://www.commandlinefu.com/commands/view/12107/list-osx-applications-and-versions.)
-<br><br>
 
 ```find /Applications -type d -maxdepth 1 -exec sh -c 'echo "{}"; (plutil -convert xml1 -o - "{}/Contents/Info.plist" | xpath /dev/stdin "concat(\"v\", /plist/dict/string[preceding-sibling::key[1]=\"CFBundleShortVersionString\"]/node())" 2>/dev/null)' \;```
 <br><br>

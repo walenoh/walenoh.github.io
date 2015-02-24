@@ -193,8 +193,7 @@ This would kill the Microsoft Excel process, but what if we wanted to kill all M
 <p><code>/bin/rm -f ~/Library/Application\ Support/Google/Chrome/Default/Local\ Storage/*google*</code>
 <br /><br /></p>
 
-<p><a href="http://www.commandlinefu.com/commands/view/12107/list-osx-applications-and-versions.">List OSX applications and versions</a>
-<br /><br /></p>
+<p><a href="http://www.commandlinefu.com/commands/view/12107/list-osx-applications-and-versions.">List OSX applications and versions</a></p>
 
 <p><code>find /Applications -type d -maxdepth 1 -exec sh -c 'echo "{}"; (plutil -convert xml1 -o - "{}/Contents/Info.plist" | xpath /dev/stdin "concat(\"v\", /plist/dict/string[preceding-sibling::key[1]=\"CFBundleShortVersionString\"]/node())" 2&gt;/dev/null)' \;</code>
 <br /><br /></p>
