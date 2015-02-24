@@ -154,10 +154,11 @@
     <div class="article-wrap">
       <p>OS X one liners I have created or collected. All have been tested on Mavericks.</p>
 
-<p><br /></p>
+<p><br />
+Kill Microsoft Excel</p>
 
 <p><code>killall Microsoft\ Excel</code><br />
-<br />
+<br /><br />
 This would kill the Microsoft Excel process, but what if we wanted to kill all Microsoft processes?</p>
 
 <p><code>kill $(ps axc | grep -i Microsoft | awk '{print $1} ')</code><br /><br /></p>
@@ -182,32 +183,37 @@ This would kill the Microsoft Excel process, but what if we wanted to kill all M
 
 <p><code>netstat -rn | awk '/default/ { print $NF }' | head -1 | xargs -I {}  ifconfig {} | awk '/ether/ {print $2}'</code><br /><br /></p>
 
+<p>List open files for a given process name</p>
+
 <p><code>lsof -i -n -P | grep -e "$(ps aux | grep node | grep -v grep | awk -F' ' '{print $2}' | xargs | awk -F' ' '{str = $1; for(i = 2; i &lt; NF; i++) {str = str "\\|" $i} print str}')"</code>
 <br /><br /></p>
 
-<p><a href="http://www.commandlinefu.com/commands/view/12410/force-delete-of-google-chrome-google-related-local-storage-make-gmail-offline-work-again">Force delete of Google Chrome Google-related local storage, make Gmail Offline work again</a> </p>
+<p><a href="http://www.commandlinefu.com/commands/view/12410/force-delete-of-google-chrome-google-related-local-storage-make-gmail-offline-work-again">Force delete of Google Chrome Google-related local storage</a> </p>
 
 <p><code>/bin/rm -f ~/Library/Application\ Support/Google/Chrome/Default/Local\ Storage/*google*</code>
-<br /></p>
+<br /><br /></p>
 
 <p><a href="http://www.commandlinefu.com/commands/view/12107/list-osx-applications-and-versions.">List OSX applications and versions</a>
-<br /></p>
+<br /><br /></p>
 
 <p><code>find /Applications -type d -maxdepth 1 -exec sh -c 'echo "{}"; (plutil -convert xml1 -o - "{}/Contents/Info.plist" | xpath /dev/stdin "concat(\"v\", /plist/dict/string[preceding-sibling::key[1]=\"CFBundleShortVersionString\"]/node())" 2&gt;/dev/null)' \;</code>
+<br /><br /></p>
+
+<p><a href="http://osxdaily.com/2015/02/11/flatten-nested-directory-structure-command-line/">Flatten a Nested Directory &amp; File Hierarchy</a>
 <br /></p>
 
-<p><a href="http://osxdaily.com/2015/02/11/flatten-nested-directory-structure-command-line/">Flatten a Nested Directory &amp; File Hierarchy from Command Line of OS X</a>
+<p><code>find TargetDirectory/ -mindepth 2 -type f -exec mv -i '{}' TargetDirectory/ ';'</code>
+<br />
 <br /></p>
-
-<p><code>find TargetDirectory/ -mindepth 2 -type f -exec mv -i '{}' TargetDirectory/ ';'</code></p>
 
 <p>Checking DNS records
-<code>dig walenoh.com +nostats +nocomments +nocmd</code></p>
+<code>dig walenoh.com +nostats +nocomments +nocmd</code>
+<br /><br /></p>
 
 <p>Serve current directory via Http on port 8000
 <code>python -m SimpleHTTPServer</code></p>
 
-<p><br /></p>
+<p><br /><br /></p>
 
 <p>Sources</p>
 
