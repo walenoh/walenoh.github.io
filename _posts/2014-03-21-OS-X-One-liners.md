@@ -49,6 +49,14 @@ Display MAC Address of default interface
 
 ```find /Applications -type d -maxdepth 1 -exec sh -c 'echo "{}"; (plutil -convert xml1 -o - "{}/Contents/Info.plist" | xpath /dev/stdin "concat(\"v\", /plist/dict/string[preceding-sibling::key[1]=\"CFBundleShortVersionString\"]/node())" 2>/dev/null)' \;```
 
+[Flatten a Nested Directory & File Hierarchy from Command Line of OS X](http://osxdaily.com/2015/02/11/flatten-nested-directory-structure-command-line/)
+
+```find TargetDirectory/ -mindepth 2 -type f -exec mv -i '{}' TargetDirectory/ ';'```
+
+
+
+Checking DNS records
+```dig walenoh.com +nostats +nocomments +nocmd```
 
 Serve current directory via Http on port 8000
 ```python -m SimpleHTTPServer```
