@@ -12,7 +12,7 @@ OS X one liners I have created or collected. All have been tested on Mavericks.
 
 
 ```killall Microsoft\ Excel```  
-
+<br>
 This would kill the Microsoft Excel process, but what if we wanted to kill all Microsoft processes?
 
 ```kill $(ps axc | grep -i Microsoft | awk '{print $1} ')```<br><br>
@@ -43,13 +43,17 @@ Display MAC Address of default interface
 [Force delete of Google Chrome Google-related local storage, make Gmail Offline work again](http://www.commandlinefu.com/commands/view/12410/force-delete-of-google-chrome-google-related-local-storage-make-gmail-offline-work-again) 
 
 ```/bin/rm -f ~/Library/Application\ Support/Google/Chrome/Default/Local\ Storage/*google*```
+<br>
 
 
 [List OSX applications and versions](http://www.commandlinefu.com/commands/view/12107/list-osx-applications-and-versions.)
+<br>
 
 ```find /Applications -type d -maxdepth 1 -exec sh -c 'echo "{}"; (plutil -convert xml1 -o - "{}/Contents/Info.plist" | xpath /dev/stdin "concat(\"v\", /plist/dict/string[preceding-sibling::key[1]=\"CFBundleShortVersionString\"]/node())" 2>/dev/null)' \;```
+<br>
 
 [Flatten a Nested Directory & File Hierarchy from Command Line of OS X](http://osxdaily.com/2015/02/11/flatten-nested-directory-structure-command-line/)
+<br>
 
 ```find TargetDirectory/ -mindepth 2 -type f -exec mv -i '{}' TargetDirectory/ ';'```
 
@@ -61,6 +65,7 @@ Checking DNS records
 Serve current directory via Http on port 8000
 ```python -m SimpleHTTPServer```
 
+<br>
 
 
 Sources

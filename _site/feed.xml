@@ -4,7 +4,7 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="/feed.xml" />
 <link rel="alternate" type="text/html" href="" />
-<updated>2015-02-16T23:17:38-06:00</updated>
+<updated>2015-02-23T19:32:08-06:00</updated>
 <id>/</id>
 <author>
   <name>Wale Noh</name>
@@ -71,9 +71,9 @@ The way to avoid picking out the grep process itself is to ask ps for the proper
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;killall Microsoft\ Excel&lt;/code&gt;  &lt;/p&gt;
-
-&lt;p&gt;This would kill the Microsoft Excel process, but what if we wanted to kill all Microsoft processes?&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;killall Microsoft\ Excel&lt;/code&gt;&lt;br /&gt;
+&lt;br /&gt;
+This would kill the Microsoft Excel process, but what if we wanted to kill all Microsoft processes?&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;kill $(ps axc | grep -i Microsoft | awk &#39;{print $1} &#39;)&lt;/code&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -102,14 +102,27 @@ The way to avoid picking out the grep process itself is to ask ps for the proper
 
 &lt;p&gt;&lt;a href=&quot;http://www.commandlinefu.com/commands/view/12410/force-delete-of-google-chrome-google-related-local-storage-make-gmail-offline-work-again&quot;&gt;Force delete of Google Chrome Google-related local storage, make Gmail Offline work again&lt;/a&gt; &lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;/bin/rm -f ~/Library/Application\ Support/Google/Chrome/Default/Local\ Storage/*google*&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;/bin/rm -f ~/Library/Application\ Support/Google/Chrome/Default/Local\ Storage/*google*&lt;/code&gt;
+&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://www.commandlinefu.com/commands/view/12107/list-osx-applications-and-versions.&quot;&gt;List OSX applications and versions&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.commandlinefu.com/commands/view/12107/list-osx-applications-and-versions.&quot;&gt;List OSX applications and versions&lt;/a&gt;
+&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;find /Applications -type d -maxdepth 1 -exec sh -c &#39;echo &quot;{}&quot;; (plutil -convert xml1 -o - &quot;{}/Contents/Info.plist&quot; | xpath /dev/stdin &quot;concat(\&quot;v\&quot;, /plist/dict/string[preceding-sibling::key[1]=\&quot;CFBundleShortVersionString\&quot;]/node())&quot; 2&amp;gt;/dev/null)&#39; \;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;find /Applications -type d -maxdepth 1 -exec sh -c &#39;echo &quot;{}&quot;; (plutil -convert xml1 -o - &quot;{}/Contents/Info.plist&quot; | xpath /dev/stdin &quot;concat(\&quot;v\&quot;, /plist/dict/string[preceding-sibling::key[1]=\&quot;CFBundleShortVersionString\&quot;]/node())&quot; 2&amp;gt;/dev/null)&#39; \;&lt;/code&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://osxdaily.com/2015/02/11/flatten-nested-directory-structure-command-line/&quot;&gt;Flatten a Nested Directory &amp;amp; File Hierarchy from Command Line of OS X&lt;/a&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;find TargetDirectory/ -mindepth 2 -type f -exec mv -i &#39;{}&#39; TargetDirectory/ &#39;;&#39;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Checking DNS records
+&lt;code&gt;dig walenoh.com +nostats +nocomments +nocmd&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;Serve current directory via Http on port 8000
 &lt;code&gt;python -m SimpleHTTPServer&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;Sources&lt;/p&gt;
 
