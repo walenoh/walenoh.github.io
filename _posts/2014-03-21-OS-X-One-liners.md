@@ -15,15 +15,18 @@ Kill Microsoft Excel
 <br><br>
 This would kill the Microsoft Excel process, but what if we wanted to kill all Microsoft processes?
 
-```kill $(ps axc | grep -i Microsoft | awk '{print $1} ')```<br><br>
+```kill $(ps axc | grep -i Microsoft | awk '{print $1} ')```
+<br><br>
 
 Kill all applications running from /Users folder.
 
-```ps -ef | grep /Users | awk '{print $2}' | xargs kill```<br><br>
+```ps -ef | grep /Users | awk '{print $2}' | xargs kill```
+<br><br>
 
 Reset Printing System
 
-```lpstat -p | cut -d' ' -f2 | xargs -I{} lpadmin -x {}```<br><br>
+```lpstat -p | cut -d' ' -f2 | xargs -I{} lpadmin -x {}```
+<br><br>
 
 Curl outside network information. Thanks to ifconfig.me
 
@@ -62,10 +65,12 @@ List open files for a given process name
 
 
 Checking DNS records
+
 ```dig walenoh.com +nostats +nocomments +nocmd```
 <br><br>
 
 Serve current directory via Http on port 8000
+
 ```python -m SimpleHTTPServer```
 
 <br><br>
