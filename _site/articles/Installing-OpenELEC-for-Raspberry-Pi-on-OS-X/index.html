@@ -1,0 +1,271 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Installing OpenELEC for Raspberry on OS X &#8211; Walenoh</title>
+<meta name="description" content="“The Raspberry Pi is a computer that you can use for all sort of brilliant and useful things, from learning to program, to making robots, to Tweeting when birds visit a nesting box, to taking pictures from the stratosphere.” RaspberryPi.org
+
+
+My Raspberry serves as a Home Theater PC (HTPC). I’ve tired Rasplex, Raspbmc, and Xbian. All have worked great, but I find them all lacking one way or another. Now its time to start testing OpenELEC.
+
+">
+<meta name="keywords" content="Raspberry Pi, OpenELEC, OS X, dd">
+
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="Installing OpenELEC for Raspberry on OS X">
+<meta name="twitter:description" content="“The Raspberry Pi is a computer that you can use for all sort of brilliant and useful things, from learning to program, to making robots, to Tweeting when birds visit a nesting box, to taking pictures from the stratosphere.” RaspberryPi.org
+
+
+My Raspberry serves as a Home Theater PC (HTPC). I’ve tired Rasplex, Raspbmc, and Xbian. All have worked great, but I find them all lacking one way or another. Now its time to start testing OpenELEC.
+
+">
+<meta name="twitter:site" content="@walenoh">
+<meta name="twitter:creator" content="@walenoh">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="/images/default-thumb.png">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Installing OpenELEC for Raspberry on OS X">
+<meta property="og:description" content="“The Raspberry Pi is a computer that you can use for all sort of brilliant and useful things, from learning to program, to making robots, to Tweeting when birds visit a nesting box, to taking pictures from the stratosphere.” RaspberryPi.org
+
+
+My Raspberry serves as a Home Theater PC (HTPC). I’ve tired Rasplex, Raspbmc, and Xbian. All have worked great, but I find them all lacking one way or another. Now its time to start testing OpenELEC.
+
+">
+<meta property="og:url" content="/articles/Installing-OpenELEC-for-Raspberry-Pi-on-OS-X/">
+<meta property="og:site_name" content="Walenoh">
+
+
+
+
+
+<link rel="canonical" href="/articles/Installing-OpenELEC-for-Raspberry-Pi-on-OS-X/">
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Walenoh Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+	<script src="/assets/js/vendor/html5shiv.min.js"></script>
+	<script src="/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+<link href='//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700%7CPT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+
+<body class="post">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="/">Walenoh</a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav role="navigation" id="site-nav" class="nav">
+		    <ul>
+		        
+				    
+				        
+				    
+				    <li><a href="/about/" >About</a></li>
+				
+				    
+				        
+				    
+				    <li><a href="/posts/" >Articles</a></li>
+				
+				    
+				        
+				    
+				    <li><a href="/iPhoneography/" >iPhoneography</a></li>
+				
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+
+<div id="main" role="main">
+  <div class="article-author-side">
+    
+
+
+<div itemscope itemtype="http://schema.org/Person">
+
+
+	<img src="/images/bio-photo.jpg" class="bio-photo" alt="Wale Noh bio photo">
+
+
+  <h3 itemprop="name">Wale Noh</h3>
+  <p>Describe your self.</p>
+  <a href="mailto:walenoh@gmail.com" class="author-social" target="_blank"><i class="fa fa-fw fa-envelope-square"></i>Email</a>
+  <a href="http://twitter.com/walenoh" class="author-social" target="_blank"><i class="fa fa-fw fa-twitter-square"></i> Twitter</a>
+  
+  
+  
+  <a href="http://instagram.com/walenoh" class="author-social" target="_blank"><i class="fa fa-fw fa-instagram"></i> Instagram</a>
+  
+  <a href="http://github.com/walenoh" class="author-social" target="_blank"><i class="fa fa-fw fa-github"></i> Github</a>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</div>
+  </div>
+  <article class="post">
+    <div class="headline-wrap">
+      
+        <h1><a href="/articles/Installing-OpenELEC-for-Raspberry-Pi-on-OS-X/" rel="bookmark" title="Installing OpenELEC for Raspberry on OS X">Installing OpenELEC for Raspberry on OS X</a></h1>
+      
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap">
+      <p>“The Raspberry Pi is a computer that you can use for all sort of brilliant and useful things, from learning to program, to making robots, to Tweeting when birds visit a nesting box, to taking pictures from the stratosphere.” <a href="http://www.raspberrypi.org/">RaspberryPi.org</a>
+<br />
+<br />
+My Raspberry serves as a Home Theater PC (HTPC). I’ve tired Rasplex, Raspbmc, and Xbian. All have worked great, but I find them all lacking one way or another. Now its time to start testing OpenELEC.</p>
+
+<h2 id="installing-openelec-to-sd-on-os-x">Installing OpenELEC to SD on OS X</h2>
+
+<h3 id="first-lets-find-our-sd-card">First, lets find our SD card.</h3>
+
+<p><br />
+<code>diskutil list</code>
+<br /><br />
+<img src="http://www.walenoh.com/images/20131216_1.png" alt="image" />
+<br /><br /></p>
+
+<h3 id="we-can-see-my-sd-card-is-devdisk1">We can see my SD card is /dev/disk1</h3>
+<p><br />
+Lets use dd to write openELEC to our SD card. I downloaded a pre-built unofficial image from <a href="http://openelec.thestateofme.com">http://openelec.thestateofme.com/</a>. I put my download of OpenELEC in my Downloads folder.
+<br />
+<br />
+<strong>CAUTION:</strong> dd is a powerful command. If you select the wrong disk you could destroy all the data on that disk.
+<br /><br />
+<a href="https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/hdiutil.1.html">From the hdutil man page</a>
+<br /><br />
+Since any /dev entry can be treated as a raw disk image, it is worth noting which devices can be accessed when and how.  /dev/rdisk nodes are character-special devices, but are “raw” in the BSD sense and force block-aligned I/O.  They are closer to the physical disk than the buffer cache.  /dev/disk nodes, on the other hand, are buffered block-special devices and are used primarily by the kernel’s filesystem code.
+<br /><br />
+We will have dd write to the raw disk /dev/rdisk1, this will be much faster than writing to /dev/disk1.
+<br /><br />
+<code>sudo dd bs=1m if=~/Downloads/OpenELEC-RPi.arm-3.2.4.img of=/dev/rdisk1</code>
+<br /><br />
+Control + T will show a status of process.
+<br />
+<br />
+<img src="http://www.walenoh.com/images/20131216_2.png" alt="image" />
+<br />
+<br />
+dd may be unable to write to the disk if the resource is busy.
+<br /><br />
+<img src="http://www.walenoh.com/images/20131216_3.png" alt="image" />
+<br /><br />
+To fix this, unmount the disk with diskutil.
+<br />
+<code>diskutil unmountdisk /dev/disk1</code>
+<br /><br />
+<img src="http://www.walenoh.com/images/20131216_4.png" alt="image" />
+<br />
+<br />
+After the disk has been unmounted successfully. Run the dd command again.<br />
+<code>sudo dd bs=1m if=~/Downloads/OpenELEC-RPi.arm-3.2.4.img of=/dev/rdisk1</code>
+<br /><br />
+<img src="http://www.walenoh.com/images/20131216_2.png" alt="image" /></p>
+
+<h3 id="now-we-have-openelec-on-our-sd-card">Now we have OpenELEC on our SD card.</h3>
+
+
+      <hr />
+      <footer role="contentinfo">
+        <div class="social-share">
+  <h4>Share on</h4>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=/articles/Installing-OpenELEC-for-Raspberry-Pi-on-OS-X/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=/articles/Installing-OpenELEC-for-Raspberry-Pi-on-OS-X/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=/articles/Installing-OpenELEC-for-Raspberry-Pi-on-OS-X/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+  </ul>
+</div><!-- /.social-share -->
+        <p class="byline"><strong>Installing OpenELEC for Raspberry on OS X</strong> was published on <time datetime="2013-12-16T00:00:00-06:00">December 16, 2013</time>.</p>
+      </footer>
+    </div><!-- /.article-wrap -->
+  
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrap">
+  <div class="related-articles">
+  <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
+    <ul>
+    
+      <li><a href="/articles/Say-No-to-grep-v-grep/" title="Say No to grep -v grep">Say No to grep -v grep</a></li>
+    
+      <li><a href="/articles/OS-X-One-liners/" title="OS X One Liners">OS X One Liners</a></li>
+    
+      <li><a href="/articles/Cowascript-AVRDUDE-Hex-uploader-for-OS-X/" title="Cowascript: AVRDUDE Hex uploader for OS X">Cowascript: AVRDUDE Hex uploader for OS X</a></li>
+    
+    </ul>
+    <hr />
+  </div><!-- /.related-articles -->
+  <footer>
+    
+
+<span>&copy; 2015 Wale Noh. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="/assets/js/scripts.min.js"></script>
+
+	        
+
+</body>
+</html>
