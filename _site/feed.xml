@@ -4,7 +4,7 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="/feed.xml" />
 <link rel="alternate" type="text/html" href="" />
-<updated>2015-02-23T20:04:37-06:00</updated>
+<updated>2015-06-03T20:49:13-05:00</updated>
 <id>/</id>
 <author>
   <name>Wale Noh</name>
@@ -76,15 +76,18 @@ Kill Microsoft Excel&lt;/p&gt;
 &lt;br /&gt;&lt;br /&gt;
 This would kill the Microsoft Excel process, but what if we wanted to kill all Microsoft processes?&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;kill $(ps axc | grep -i Microsoft | awk &#39;{print $1} &#39;)&lt;/code&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;kill $(ps axc | grep -i Microsoft | awk &#39;{print $1} &#39;)&lt;/code&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;Kill all applications running from /Users folder.&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;ps -ef | grep /Users | awk &#39;{print $2}&#39; | xargs kill&lt;/code&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ps -ef | grep /Users | awk &#39;{print $2}&#39; | xargs kill&lt;/code&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;Reset Printing System&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;lpstat -p | cut -d&#39; &#39; -f2 | xargs -I{} lpadmin -x {}&lt;/code&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;lpstat -p | cut -d&#39; &#39; -f2 | xargs -I{} lpadmin -x {}&lt;/code&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;Curl outside network information. Thanks to ifconfig.me&lt;/p&gt;
 
@@ -120,12 +123,14 @@ This would kill the Microsoft Excel process, but what if we wanted to kill all M
 &lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;Checking DNS records
-&lt;code&gt;dig walenoh.com +nostats +nocomments +nocmd&lt;/code&gt;
+&lt;p&gt;Checking DNS records&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;dig walenoh.com +nostats +nocomments +nocmd&lt;/code&gt;
 &lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;Serve current directory via Http on port 8000
-&lt;code&gt;python -m SimpleHTTPServer&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Serve current directory via Http on port 8000&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;python -m SimpleHTTPServer&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 

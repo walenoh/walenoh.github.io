@@ -161,15 +161,18 @@ Kill Microsoft Excel</p>
 <br /><br />
 This would kill the Microsoft Excel process, but what if we wanted to kill all Microsoft processes?</p>
 
-<p><code>kill $(ps axc | grep -i Microsoft | awk '{print $1} ')</code><br /><br /></p>
+<p><code>kill $(ps axc | grep -i Microsoft | awk '{print $1} ')</code>
+<br /><br /></p>
 
 <p>Kill all applications running from /Users folder.</p>
 
-<p><code>ps -ef | grep /Users | awk '{print $2}' | xargs kill</code><br /><br /></p>
+<p><code>ps -ef | grep /Users | awk '{print $2}' | xargs kill</code>
+<br /><br /></p>
 
 <p>Reset Printing System</p>
 
-<p><code>lpstat -p | cut -d' ' -f2 | xargs -I{} lpadmin -x {}</code><br /><br /></p>
+<p><code>lpstat -p | cut -d' ' -f2 | xargs -I{} lpadmin -x {}</code>
+<br /><br /></p>
 
 <p>Curl outside network information. Thanks to ifconfig.me</p>
 
@@ -205,12 +208,14 @@ This would kill the Microsoft Excel process, but what if we wanted to kill all M
 <br />
 <br /></p>
 
-<p>Checking DNS records
-<code>dig walenoh.com +nostats +nocomments +nocmd</code>
+<p>Checking DNS records</p>
+
+<p><code>dig walenoh.com +nostats +nocomments +nocmd</code>
 <br /><br /></p>
 
-<p>Serve current directory via Http on port 8000
-<code>python -m SimpleHTTPServer</code></p>
+<p>Serve current directory via Http on port 8000</p>
+
+<p><code>python -m SimpleHTTPServer</code></p>
 
 <p><br /><br /></p>
 
